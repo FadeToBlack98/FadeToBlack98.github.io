@@ -3,91 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FadeToBlack_98 Portfolio</title>
+    <title>Developer Portfolio</title>
     <style>
         :root {
-            --bg-color: #121212;
-            --text-color: #f0f0f0;
-            --accent-color: #4ade80;
-            --secondary-bg: #1e1e1e;
-            --card-bg: #252525;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --accent: #4caf50;
+            --text: #e0e0e0;
+            --text-secondary: #b0b0b0;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--dark-bg);
+            color: var(--text);
             line-height: 1.6;
-        }
-        
-        header {
-            background-color: var(--secondary-bg);
-            padding: 2rem 0;
-            text-align: center;
-            border-bottom: 3px solid var(--accent-color);
         }
         
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
         
-        h1 {
+        header {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        header h1 {
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
         }
         
-        h2 {
-            font-size: 1.8rem;
-            margin: 2rem 0 1rem;
-            color: var(--accent-color);
-        }
-        
-        .subtitle {
+        header p {
             font-size: 1.2rem;
-            opacity: 0.8;
+            color: var(--text-secondary);
         }
         
         .highlight {
-            color: var(--accent-color);
+            color: var(--accent);
         }
         
         section {
-            margin: 3rem 0;
+            padding: 40px 0;
+        }
+        
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .about {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
         
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
         }
         
-        .skill-tag {
-            background-color: var(--secondary-bg);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            border: 1px solid var(--accent-color);
+        .skill {
+            background-color: var(--card-bg);
+            padding: 10px 20px;
+            border-radius: 5px;
+            border-left: 3px solid var(--accent);
         }
         
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
         .project-card {
             background-color: var(--card-bg);
             border-radius: 8px;
-            overflow: hidden;
+            padding: 25px;
             transition: transform 0.3s ease;
         }
         
@@ -95,152 +104,113 @@
             transform: translateY(-5px);
         }
         
-        .project-img {
-            width: 100%;
-            height: 180px;
-            background-color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-color);
-            font-size: 1.5rem;
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-        }
-        
-        .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        .project-card h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
         }
         
         .contact {
-            background-color: var(--secondary-bg);
-            padding: 2rem 0;
             text-align: center;
-            margin-top: 3rem;
         }
         
-        .contact-links {
+        .contact-info {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
         }
         
-        .contact-link {
+        .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .contact-link:hover {
-            color: var(--accent-color);
+            gap: 10px;
         }
         
         footer {
             text-align: center;
-            padding: 2rem 0;
-            opacity: 0.7;
+            padding: 30px 0;
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            h1 {
+            header {
+                padding: 40px 0;
+            }
+            
+            header h1 {
                 font-size: 2rem;
+            }
+            
+            section h2 {
+                font-size: 1.7rem;
             }
             
             .projects {
                 grid-template-columns: 1fr;
             }
-            
-            .contact-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>FadeToBlack_<span class="highlight">98</span></h1>
-            <p class="subtitle">Developer | Animator | Reverse Engineering Specialist</p>
-        </div>
-    </header>
-    
-    <main class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>I'm a passionate developer with <span class="highlight">2 years of experience</span> specializing in game development, animation, and reverse engineering. I create engaging experiences and provide technical solutions for Roblox and other platforms.</p>
-        </section>
+    <div class="container">
+        <header>
+            <h1>Developer <span class="highlight">&</span> Animator</h1>
+            <p>Creating engaging experiences and technical solutions</p>
+        </header>
         
-        <section>
-            <h2>Skills</h2>
+        <section class="about">
+            <h2>About Me</h2>
+            <p>I am a passionate developer with 2 years of experience. I mainly deal with game development, animation and reverse engineering. I build engaging experiences and technical solutions for Roblox and more.</p>
+            
             <div class="skills">
-                <div class="skill-tag">Lua Programming</div>
-                <div class="skill-tag">Animation</div>
-                <div class="skill-tag">Reverse Engineering</div>
-                <div class="skill-tag">Game Development</div>
-                <div class="skill-tag">UI/UX Design</div>
-                <div class="skill-tag">Problem Solving</div>
-                <div class="skill-tag">Roblox Studio</div>
+                <div class="skill">Game Development</div>
+                <div class="skill">Animation</div>
+                <div class="skill">Reverse Engineering</div>
+                <div class="skill">Roblox</div>
             </div>
         </section>
         
         <section>
-            <h2>Featured Projects</h2>
+            <h2>Projects</h2>
             <div class="projects">
                 <div class="project-card">
-                    <div class="project-img">Animation System</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Custom Animation Framework</h3>
-                        <p>Developed a flexible animation system for Roblox games that allows for smooth character movements and special effects.</p>
-                    </div>
+                    <h3>Custom Animation Framework</h3>
+                    <p>Created a versatile animation system for Roblox games that allows for moving characters and special effects.</p>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-img">Game Mechanics</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Combat System Overhaul</h3>
-                        <p>Redesigned and implemented an improved combat system with hitbox detection and special abilities.</p>
-                    </div>
+                    <h3>Combat System Overhaul</h3>
+                    <p>Reworked combat system with hitbox detection and special abilities and implemented it.</p>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-img">RE Project</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Game Analysis Tool</h3>
-                        <p>Created a tool to analyze game mechanics and optimize performance through reverse engineering techniques.</p>
-                    </div>
+                    <h3>Game Analysis Tool</h3>
+                    <p>A tool will analyse mechanics of a game and optimize it through reverse engineering.</p>
                 </div>
             </div>
         </section>
-    </main>
-    
-    <div class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p>Interested in working together? Reach out through Discord or find me on Roblox.</p>
-            <div class="contact-links">
-                <a href="https://discord.com/users/fadetoblack98_" class="contact-link">
-                    <span>Discord: fadetoblack98_</span>
-                </a>
-                <a href="https://www.roblox.com/users/profile?username=FadeToBlack_98" class="contact-link">
-                    <span>Roblox: FadeToBlack_98</span>
-                </a>
+        
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>Interested in working together? Reach out to me!</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>Discord:</span>
+                    <span class="highlight">FadeToBlack_98</span>
+                </div>
+                <div class="contact-item">
+                    <span>Roblox:</span>
+                    <span class="highlight">FadeToBlack_98</span>
+                </div>
             </div>
-        </div>
+        </section>
+        
+        <footer>
+            <p>Â© 2025 Developer Portfolio. All rights reserved.</p>
+        </footer>
     </div>
-    
-    <footer>
-        <div class="container">
-            <p>Â© 2025 FadeToBlack_98 | All Rights Reserved</p>
-        </div>
-    </footer>
 </body>
 </html>
